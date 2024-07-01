@@ -1,5 +1,5 @@
 import React from "react";
-import { ClerkProvider, SignInButton, SignedOut } from "@clerk/nextjs";
+import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
 import { Inter, Space_Grotesk } from "next/font/google";
 import type { Metadata } from "next";
@@ -18,7 +18,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "DevFlow",
+  title: "DevOverflow",
   description:
     "DevFlow is a platform to help developers to improve their skills and knowledge.",
   icons: {
@@ -43,9 +43,6 @@ export default function RootLayout({
           }}
         >
           <ThemeProvider>
-            <SignedOut>
-              <SignInButton />
-            </SignedOut>
             {children}
           </ThemeProvider>
         </ClerkProvider>
