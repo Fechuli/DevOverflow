@@ -5,46 +5,14 @@ import NoResult from "@/components/shared/NoResult";
 import LocalSearchbar from "@/components/shared/search/LocalSearchbar";
 import { Button } from "@/components/ui/button";
 import { HomePageFilters } from "@/constants/filters";
+import { getQuestions } from "@/lib/actions/question.action";
 import Link from "next/link";
 
-const questions = [
-  {
-    _id: "1",
-    title: "How to use React?",
-    tags: [
-      { _id: "1", name: "react" },
-      { _id: "2", name: "javascript" },
-    ],
-    author: {
-      _id: "1",
-      name: "John Doe",
-      picture: "/assets/images/profile.png",
-    },
-    upvotes: 10,
-    views: 50,
-    answers: [],
-    createdAt: new Date(),
-  },
-  {
-    _id: "2",
-    title: "How to use React?",
-    tags: [
-      { _id: "1", name: "react" },
-      { _id: "2", name: "javascript" },
-    ],
-    author: {
-      _id: "1",
-      name: "John Doe",
-      picture: "/assets/images/profile.png",
-    },
-    upvotes: 10,
-    views: 50,
-    answers: [],
-    createdAt: new Date(),
-  },
-];
+export default async function Home() {
 
-export default function Home() {
+  const result = await getQuestions({})
+
+
   return (
     <>
       <div className="flex w-full flex-col-reverse justify-between gap-4 sm:flex-row sm:items-center">
@@ -72,8 +40,8 @@ export default function Home() {
       </div>
       <HomeFilters />
       <div className="mt-10 flex w-full flex-col gap-6">
-        {questions.length > 0 ? (
-          questions.map((question) => <QuestionCard 
+        {result.questions.length > 0 ? (
+          result.questions.map((question) => <QuestionCard 
           key={question._id}
           _id={question._id}
           title={question.title}
