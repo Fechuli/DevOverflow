@@ -119,7 +119,7 @@ export async function toggleSaveQuestions(params: ToggleSaveQuestionParams) {
 export async function getSavedQuestions(params: GetSavedQuestionsParams) {
   try {
     connectToDatabase();
-    const { clerkId, page = 1, pageSize = 10, filter, searchQuery } = params;
+    const { clerkId, searchQuery } = params;
     const query: FilterQuery<typeof Question> = searchQuery ? {title: { $regex: new RegExp(searchQuery, 'i') }} : {};
     const user = await User.findOne({clerkId}).populate({
       path: "saved",
