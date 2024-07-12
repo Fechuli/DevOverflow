@@ -88,5 +88,5 @@ export async function POST(req: Request) {
     return NextResponse.json({ message: "User deleted", user: deletedUser });
   }
 
-  return new Response("", { status: 200 });
+  return NextResponse.json({ message: "Ok" });
 }

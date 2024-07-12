@@ -21,6 +21,7 @@ import { Badge } from "../ui/badge";
 import Image from "next/image";
 import { createQuestion, editQuestion } from "@/lib/actions/question.action";
 import { useTheme } from "@/context/ThemeProvider";
+import { toast } from "../ui/use-toast";
 
 interface Props {
   type?: string;
@@ -58,6 +59,9 @@ const Question = ({ type, mongoUserId, questionDetails }: Props) => {
           path: pathname,
         })
         router.push(`/questions/${parsedQuestionDetails._id}`);
+        return toast({
+          title: `Question edited successfully`,
+        });
       } else {
         await createQuestion({
           title: values.title,
@@ -67,9 +71,16 @@ const Question = ({ type, mongoUserId, questionDetails }: Props) => {
           path: pathname,
         });
         router.push("/");
+        return toast({
+          title: `Posted successfully`,
+        });
       }
     } catch (error) {
       console.log(error);
+      return toast({
+        title: `An error occurred`,
+        description: "Please try again",
+      });
     } finally {
       setIsSubmitting(false);
     }

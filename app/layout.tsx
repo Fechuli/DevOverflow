@@ -20,9 +20,9 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "DevOverflow",
+  title: "Backdoor - DevFlow",
   description:
-    "DevFlow is a platform to help developers to improve their skills and knowledge.",
+    "Backdoor - DevFlow for internal use only. A platform for discussing and sharing knowledge about Backdoor's projects.",
   icons: {
     icon: "/assets/images/site-logo.svg",
   },

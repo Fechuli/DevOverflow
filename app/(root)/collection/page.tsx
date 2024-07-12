@@ -7,6 +7,13 @@ import { QuestionFilters } from "@/constants/filters";
 import { getSavedQuestions } from "@/lib/actions/user.action";
 import { SearchParamsProps } from "@/types";
 import { auth } from "@clerk/nextjs";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Collection | Backdoor - DevFlow	",
+  description:
+    "Collection page of Backdoor - DevFlow. All the posts you have saved.",
+};
 
 export default async function Collection({searchParams}:SearchParamsProps) {
   const { userId } = auth();
