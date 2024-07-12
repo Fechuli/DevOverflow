@@ -53,7 +53,11 @@ const Profile = async ({ params, searchParams }: URLProps) => {
                 title={getJoinedDate(userInfo.user.joinedAt)}
               />
             </div>
-            {userInfo.user.bio && <p className="paragraph-regular text-dark400_light800 mt-8">{userInfo.user.bio}</p>}
+            {userInfo.user.bio && (
+              <p className="paragraph-regular text-dark400_light800 mt-8">
+                {userInfo.user.bio}
+              </p>
+            )}
           </div>
         </div>
         <div className="flex justify-end max-sm:mb-5 max-sm:w-full sm:mt-3">
@@ -70,9 +74,10 @@ const Profile = async ({ params, searchParams }: URLProps) => {
       </div>
 
       <Stats
+        reputation={userInfo.reputation}
         totalQuestions={userInfo.totalQuestions}
         totalAnswers={userInfo.totalAnswers}
-        
+        badges={userInfo.badgeCounts}
       />
 
       <div className="mt-10 flex gap-10">
@@ -87,16 +92,16 @@ const Profile = async ({ params, searchParams }: URLProps) => {
           </TabsList>
           <TabsContent value="top-posts">
             <QuestionTab
-                searchParams={searchParams}
-                userId={userInfo.user._id}
-                clerkId={clerkId}
+              searchParams={searchParams}
+              userId={userInfo.user._id}
+              clerkId={clerkId}
             />
           </TabsContent>
           <TabsContent value="answers" className="flex w-full flex-col gap-6">
             <AnswersTab
-                searchParams={searchParams}
-                userId={userInfo.user._id}
-                clerkId={clerkId}
+              searchParams={searchParams}
+              userId={userInfo.user._id}
+              clerkId={clerkId}
             />
           </TabsContent>
         </Tabs>
