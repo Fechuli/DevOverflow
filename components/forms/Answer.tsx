@@ -99,7 +99,7 @@ const Answer = ({ question, questionId, authorId }: Props) => {
           Write your answer here
         </h4>
         <Button
-          className="btn light-border-2 gap-1.5 rounded-md px-4 py-2.5 text-primary-500 shadow-none dark:text-primary-500"
+          className="btn light-border-2 gap-1.5 rounded-md px-4 py-2.5 text-dark-500 shadow-none dark:text-primary-500"
           onClick={generateAiAnswer}
         >
           {isSubmittingAI ? (

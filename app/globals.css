@@ -43,7 +43,7 @@ body {
   }
 
   .primary-gradient {
-    background: linear-gradient(129deg, #bdff00 0%, #4c4b4b 100%);
+    background: linear-gradient(129deg, #bdff00 0%, #000000 100%);
   }
 
   .dark-gradient {
@@ -77,7 +77,7 @@ body {
 }
 
 .primary-text-gradient {
-  background: linear-gradient(129deg, #bdff00 0%, #4c4b4b 100%);
+  background: linear-gradient(129deg, #bdff00 0%, #111111 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -145,7 +145,7 @@ code {
 
 /* Clerk */
 .cl-internal-b3fm6y {
-  background: linear-gradient(129deg, #bdff00 0%, #4c4b4b 100%) !important;
+  background: linear-gradient(129deg, #bdff00 0%, #111111 100%) !important;
 }
 
 .hash-span {
